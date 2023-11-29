@@ -16,22 +16,19 @@ class PersonFragment : Fragment() {
     private var _binding: FragmentPersonBinding? = null
 
     private val binding get() = _binding!!
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(PersonViewModel::class.java)
 
         _binding = FragmentPersonBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textPerson
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+        return binding.root
     }
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 
 }

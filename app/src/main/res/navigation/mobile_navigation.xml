@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_person"
         android:name="com.example.veggiehealth.ui.person.PersonFragment"
         android:label="@string/nav_person"
         tools:layout="@layout/fragment_person" />
