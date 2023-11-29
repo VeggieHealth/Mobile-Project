@@ -3,6 +3,7 @@ package com.example.veggiehealth.ui.login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.veggiehealth.MainActivity
 import com.example.veggiehealth.databinding.ActivityLoginBinding
 import com.example.veggiehealth.textfield.EmailText
 import com.example.veggiehealth.textfield.PasswordText
@@ -22,6 +23,11 @@ class LoginActivity : AppCompatActivity() {
         binding.tvSignUp.setOnClickListener {
             val signUpIntent  = Intent(this, RegisterActivity::class.java)
             startActivity(signUpIntent)
+
+        }
+        binding.button.setOnClickListener {
+            val buttonIntent = Intent(this, MainActivity::class.java)
+            startActivity(buttonIntent)
         }
     }
 
