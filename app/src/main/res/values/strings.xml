@@ -13,6 +13,18 @@
     <string name="password">Password</string>
     <string name="nav_home">Home</string>
     <string name="nav_person">Person</string>
+    <string name="logout">Log out</string>
+    <string name="greeting">Good Afternoon</string>
+    <string name="veggie_menu">Veggie Menu</string>
+    <string name="welcome_text">Come on, understand the nutritional benefits of vegetables for your body with Veggie Health Mobile</string>
+    <string name="find_vegetables">Find Vegetables</string>
+    <string name="kenali_sayuran">Discover vegetables and know their benefits</string>
+
+    <string name="camera">Camera</string>
+    <string name="galery">Galery</string>
+    <string name="example_email">your_example@email.com</string>
+    <string name="example_name">Example Name</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

@@ -29,6 +29,8 @@ class LoginActivity : AppCompatActivity() {
             val buttonIntent = Intent(this, MainActivity::class.java)
             startActivity(buttonIntent)
         }
+
+        supportActionBar?.hide()
     }
 
 

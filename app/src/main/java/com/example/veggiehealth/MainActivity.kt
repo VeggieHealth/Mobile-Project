@@ -1,5 +1,7 @@
 package com.example.veggiehealth
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
@@ -20,5 +22,14 @@ class MainActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         navView.setupWithNavController(navController)
+
+        supportActionBar?.hide()
+//        supportActionBar?.apply {
+//            supportActionBar?.title = "Veggie Health"
+//            supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#79AC78")))
+//        }
     }
+//    fun setActionBarTitle(title: String) {
+//        supportActionBar?.title = title
+//    }
 }
