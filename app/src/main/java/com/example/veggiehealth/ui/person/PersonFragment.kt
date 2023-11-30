@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
+import com.example.veggiehealth.MainActivity
 import com.example.veggiehealth.R
 import com.example.veggiehealth.databinding.FragmentPersonBinding
 import com.example.veggiehealth.ui.login.LoginActivity
@@ -24,9 +25,11 @@ class PersonFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
+//        (activity as MainActivity).setActionBarTitle("Profile")
+
         _binding = FragmentPersonBinding.inflate(inflater, container, false)
 
-        binding.buttonLogoutProfile.setOnClickListener {
+        binding.btnLogoutProfile.setOnClickListener {
             val logoutIntent = Intent(requireContext(), LoginActivity::class.java)
             startActivity(logoutIntent)
         }

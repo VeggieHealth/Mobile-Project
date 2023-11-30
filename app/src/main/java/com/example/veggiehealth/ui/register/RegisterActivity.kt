@@ -18,5 +18,6 @@ class RegisterActivity : AppCompatActivity() {
             val signInIntent = Intent(this, LoginActivity::class.java)
             startActivity(signInIntent)
         }
+        supportActionBar?.hide()
     }
 }

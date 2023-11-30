@@ -12,10 +12,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/poppins_bold"
         android:text="@string/welcome_to"
         android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,9 +24,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_bold"
         android:text="@string/veggie_health_mobile"
         android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -48,6 +47,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:text="@string/login"
+        android:fontFamily="@font/poppins_light"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -81,6 +81,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginBottom="8dp"
         android:text="@string/didnt_register"
+        android:fontFamily="@font/poppins_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintHorizontal_bias="1.0"
@@ -93,6 +94,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="8dp"
         android:text="@string/sign_up_login"
+        android:fontFamily="@font/poppins_light"
         android:textColor="@color/green_8"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -106,7 +108,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:text="@string/email"
-        android:textStyle="bold"
+        android:fontFamily="@font/poppins_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -164,7 +166,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:text="@string/password"
-        android:textStyle="bold"
+        android:fontFamily="@font/poppins_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailEditTextLayout" />
 

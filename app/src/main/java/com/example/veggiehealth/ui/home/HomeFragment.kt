@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
+import com.example.veggiehealth.MainActivity
 import com.example.veggiehealth.R
 import com.example.veggiehealth.databinding.FragmentHomeBinding
 
@@ -22,6 +23,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
+//        (activity as MainActivity).setActionBarTitle("Veggie Health")
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
