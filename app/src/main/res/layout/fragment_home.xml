@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroundhome"
     tools:context=".ui.home.HomeFragment">
 
  <com.google.android.material.card.MaterialCardView
@@ -55,8 +56,8 @@
        android:layout_marginStart="16dp"
        android:fontFamily="@font/poppins_light"
        android:text="@string/welcome_text"
-       android:textStyle="bold"
        android:textSize="11sp"
+       android:textStyle="bold"
        app:layout_constraintStart_toStartOf="parent"
        app:layout_constraintTop_toBottomOf="@+id/tv_nama_home" />
 
@@ -73,8 +74,8 @@
      android:layout_marginStart="16dp"
      android:layout_marginTop="16dp"
      android:fontFamily="@font/poppins_bold"
-     android:textSize="20sp"
      android:text="@string/veggie_menu"
+     android:textSize="20sp"
      app:layout_constraintStart_toStartOf="parent"
      app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
 
@@ -92,63 +93,95 @@
   <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:background="@color/green_2">
+      android:background="@drawable/backgorund_list">
 
    <TextView
-       android:id="@+id/tv_vegetable"
-       android:layout_width="210dp"
-       android:layout_height="50dp"
-       android:layout_marginStart="16dp"
-       android:layout_marginTop="38dp"
-       android:fontFamily="@font/poppins_bold"
-       android:text="@string/find_vegetables"
-       android:textSize="25sp"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toTopOf="parent" />
-
-   <TextView
-       android:layout_width="210dp"
-       android:layout_height="50dp"
-       android:layout_marginStart="16dp"
-       android:fontFamily="@font/poppins_light"
-       android:text="@string/kenali_sayuran"
-       android:textSize="18sp"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/tv_vegetable" />
-
-   <ImageView
-       android:id="@+id/iv_sayuran"
-       android:layout_width="110dp"
-       android:layout_height="110dp"
+       android:id="@+id/the_vegetables"
+       android:layout_width="200dp"
+       android:layout_height="35dp"
+       android:layout_marginTop="16dp"
        android:layout_marginEnd="16dp"
-       android:src="@drawable/list_sayuran"
-       app:layout_constraintBottom_toBottomOf="parent"
+       android:fontFamily="@font/poppins_bold"
+       android:gravity="end"
+       android:text="@string/the_vegetables"
+       android:textColor="@color/white"
+       android:textSize="18sp"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintTop_toTopOf="parent" />
+
+   <TextView
+       android:id="@+id/desc_list"
+       android:layout_width="200dp"
+       android:layout_height="60dp"
+       android:layout_marginTop="8dp"
+       android:layout_marginEnd="16dp"
+       android:fontFamily="@font/poppins_light"
+       android:gravity="end"
+       android:text="@string/desc_list_veg"
+       android:textSize="11sp"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/the_vegetables" />
+
+   <Button
+       android:id="@+id/btn_list_home"
+       android:layout_width="120dp"
+       android:layout_height="40dp"
+       android:layout_marginTop="12dp"
+       android:layout_marginEnd="16dp"
+       android:backgroundTint="@color/green_1"
+       android:fontFamily="@font/poppins_light"
+       android:text="@string/button_list"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/desc_list" />
 
   </androidx.constraintlayout.widget.ConstraintLayout>
 
  </com.google.android.material.card.MaterialCardView>
 
  <com.google.android.material.card.MaterialCardView
-     android:id="@+id/materialCardView2"
-     android:layout_width="180dp"
-     android:layout_height="180dp"
+     android:id="@+id/cv_quiz"
+     android:layout_width="170dp"
+     android:layout_height="170dp"
      android:layout_marginStart="16dp"
      android:layout_marginTop="16dp"
+     android:layout_marginEnd="16dp"
      app:layout_constraintStart_toStartOf="parent"
      app:layout_constraintTop_toBottomOf="@+id/cv_daftar_sayuran">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@drawable/btn_quiz">
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
 
  </com.google.android.material.card.MaterialCardView>
 
  <com.google.android.material.card.MaterialCardView
-     android:layout_width="180dp"
-     android:layout_height="180dp"
+     android:id="@+id/cv_scan"
+     android:layout_width="170dp"
+     android:layout_height="170dp"
+     android:layout_marginStart="8dp"
      android:layout_marginTop="16dp"
      android:layout_marginEnd="16dp"
      app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintStart_toStartOf="@+id/guideline6"
      app:layout_constraintTop_toBottomOf="@+id/cv_daftar_sayuran">
 
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@drawable/btn_scan">
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
  </com.google.android.material.card.MaterialCardView>
+
+ <androidx.constraintlayout.widget.Guideline
+     android:id="@+id/guideline6"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:orientation="vertical"
+     app:layout_constraintGuide_begin="205dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
