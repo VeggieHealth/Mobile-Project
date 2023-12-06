@@ -33,6 +33,10 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
+        <activity
+            android:name=".ui.detail.DetailActivity"
+            android:exported="false" />
     </application>
+
 
 </manifest>

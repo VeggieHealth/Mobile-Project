@@ -31,5 +31,14 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="wortel">Wortel</string>
+    <string name="deskripsi_detail">Deskripsi</string>
+    <string name="nutrisi">Nutrisi</string>
+    <string name="manfaat">Manfaat</string>
+    <string name="kcal">125 Kcal</string>
+    <string name="carbs">125g Carbs</string>
+    <string name="protenis">24g Proteins</string>
+    <string name="vitamin">Vitamin A</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Posuere lorem ipsum dolor sit amet consectetur adipiscing. Vel pretium lectus quam id leo in vitae turpis massa. Eu volutpat odio facilisis mauris sit amet.</string>
 
 </resources>
