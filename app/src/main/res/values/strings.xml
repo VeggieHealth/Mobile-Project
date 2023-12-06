@@ -22,6 +22,15 @@
     <string name="the_vegetables">The Vegetables</string>
     <string name="desc_list_veg">Come on, get to know the various types of vegetables and their benefits for human health that we don\'t yet know about</string>
     <string name="button_list">Go to list</string>
+    <string name="wortel">Wortel</string>
+    <string name="deskripsi_detail">Deskripsi</string>
+    <string name="nutrisi">Nutrisi</string>
+    <string name="manfaat">Manfaat</string>
+    <string name="kcal">125 Kcal</string>
+    <string name="carbs">125g Carbs</string>
+    <string name="protenis">24g Proteins</string>
+    <string name="vitamin">Vitamin A</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Posuere lorem ipsum dolor sit amet consectetur adipiscing. Vel pretium lectus quam id leo in vitae turpis massa. Eu volutpat odio facilisis mauris sit amet.</string>
 
     <string name="camera">Camera</string>
     <string name="galery">Galery</string>
