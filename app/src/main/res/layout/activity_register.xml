@@ -162,6 +162,7 @@
         android:text="@string/sign_up_login"
         android:textSize="18sp"
         android:textStyle="normal"
+        app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"

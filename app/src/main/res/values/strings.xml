@@ -40,5 +40,9 @@
     <string name="protenis">24g Proteins</string>
     <string name="vitamin">Vitamin A</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Posuere lorem ipsum dolor sit amet consectetur adipiscing. Vel pretium lectus quam id leo in vitae turpis massa. Eu volutpat odio facilisis mauris sit amet.</string>
-
+    <string name="guess">Tebak Sayur ini</string>
+    <string name="whats_vegetable">SAYUR APA INI</string>
+    <string name="question_mark">/?</string>
+    <string name="correct">Selamat!! Jawaban Anda Benar</string>
+    <string name="wrong">Mohon Maaf, Jawaban Anda Salah</string>
 </resources>
