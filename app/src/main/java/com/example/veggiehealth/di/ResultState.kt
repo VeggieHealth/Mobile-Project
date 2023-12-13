@@ -5,6 +5,6 @@ sealed class ResultState<out R> private constructor() {
 
     data class Error(val error: String) : ResultState<Nothing>()
 
-    object Loading : ResultState<Nothing>()
+    data object Loading : ResultState<Nothing>()
 }
 
