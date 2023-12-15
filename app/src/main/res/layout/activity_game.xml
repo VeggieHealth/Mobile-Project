@@ -1,151 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
     android:background="@drawable/backgroundhome"
-    android:paddingHorizontal="15dp"
     tools:context=".ui.game.GameActivity">
 
-    <TextView
-        android:id="@+id/dialogTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_bold"
-        android:text="@string/whats_vegetable"
-        android:textAlignment="textStart"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/cardImage"
-        app:layout_constraintEnd_toStartOf="@+id/title2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/title2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:fontFamily="@font/poppins_bold"
-        android:text="@string/question_mark"
-        android:textAlignment="textEnd"
-
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/dialogTitle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/dialogTitle"
-        app:layout_constraintTop_toTopOf="@+id/dialogTitle" />
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="10dp"
-        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.ExtraLarge"
-        app:layout_constraintBottom_toTopOf="@+id/choice1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dialogTitle">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/imgFruit"
-                android:layout_width="350dp"
-                android:layout_height="200dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/wortel"
-                android:contentDescription="@string/guess"
-                android:scaleType="fitCenter"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/choice1"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_bold"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="30dp"
-        app:cornerRadius="10dp"
-        app:backgroundTint="@color/green_2"
-        app:layout_constraintBottom_toTopOf="@+id/choice2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardImage"
-        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.ExtraLarge"/>
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/choice2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_bold"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="30dp"
-        app:backgroundTint="@color/green_2"
-        app:cornerRadius="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/choice3"
-        app:layout_constraintEnd_toEndOf="@+id/choice1"
-        app:layout_constraintStart_toStartOf="@+id/choice1"
-        app:layout_constraintTop_toBottomOf="@+id/choice1"
-        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.ExtraLarge" />
+        <TextView
+            android:id="@+id/tv_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            tools:text="what vegetable is this?" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/choice3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_bold"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="30dp"
-        app:backgroundTint="@color/green_2"
-        app:cornerRadius="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/choice4"
-        app:layout_constraintEnd_toEndOf="@+id/choice2"
-        app:layout_constraintStart_toStartOf="@+id/choice2"
-        app:layout_constraintTop_toBottomOf="@+id/choice2"
-        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.ExtraLarge" />
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/choice4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_bold"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="30dp"
-        app:backgroundTint="@color/green_2"
-        app:cornerRadius="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/choice3"
-        app:layout_constraintStart_toStartOf="@+id/choice3"
-        app:layout_constraintTop_toBottomOf="@+id/choice3"
-        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.ExtraLarge" />
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="252dp"
+            android:layout_height="134dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="image"
+            tools:src="@drawable/veggie_brokoli" />
 
+        <LinearLayout
+            android:id="@+id/ll_progress_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@+id/choice2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/choice1"
-        tools:visibility="visible" />
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:indeterminate="false"
+                android:max="5"
+                android:minHeight="50dp"
+                android:progress="0" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tv_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="15dp"
+                android:textColorHint="@color/grey_1"
+                android:textSize="14sp"
+                tools:text="0/10" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_option_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/default_option_border_bg"
+            android:gravity="center"
+            android:padding="15dp"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:text="Apple" />
+
+        <TextView
+            android:id="@+id/tv_option_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppins_light"
+            android:background="@drawable/default_option_border_bg"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:text="Google" />
+
+        <TextView
+            android:id="@+id/tv_option_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/poppins_light"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/default_option_border_bg"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:text="Android Inc." />
+
+        <TextView
+            android:id="@+id/tv_option_four"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/poppins_light"
+            android:background="@drawable/default_option_border_bg"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:text="Nokia" />
+
+        <Button
+            android:id="@+id/button_submit"
+            android:layout_width="328dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/green_2"
+            android:text="Submit"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            app:cornerRadius="10dp" />
+    </LinearLayout>
+</ScrollView>
