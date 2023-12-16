@@ -49,6 +49,7 @@ class UserRepository private constructor(
             }
         ).liveData
     }
+    
     fun getDetailSayuran(id: String) = liveData {
         emit(ResultState.Loading)
         try {
