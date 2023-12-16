@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:padding="8dp">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/image"
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -26,16 +26,17 @@
             app:layout_constraintVertical_bias="0.056" />
 
         <TextView
-            android:id="@+id/username"
+            android:id="@+id/nama_sayuran"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/poppins_bold"
             android:text="Your Name"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/image"
-            app:layout_constraintTop_toTopOf="@id/image"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toTopOf="@id/image" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
