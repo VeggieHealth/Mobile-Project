@@ -8,6 +8,7 @@ import com.example.veggiehealth.di.Injection
 import com.example.veggiehealth.ui.detail.DetailViewModel
 import com.example.veggiehealth.ui.list.ListViewModel
 import com.example.veggiehealth.ui.login.LoginViewModel
+import com.example.veggiehealth.ui.person.ProfileViewModel
 import com.example.veggiehealth.ui.register.RegisterViewModel
 
 class ViewModelFactory(private val repository: UserRepository) : ViewModelProvider.NewInstanceFactory() {
@@ -28,6 +29,9 @@ class ViewModelFactory(private val repository: UserRepository) : ViewModelProvid
             }
             modelClass.isAssignableFrom(DetailViewModel::class.java) -> {
                 DetailViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(ProfileViewModel::class.java) -> {
+                ProfileViewModel(repository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }

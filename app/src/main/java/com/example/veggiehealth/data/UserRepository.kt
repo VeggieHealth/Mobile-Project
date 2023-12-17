@@ -10,6 +10,7 @@ import com.example.veggiehealth.data.pref.UserModel
 import com.example.veggiehealth.data.pref.UserPreference
 import com.example.veggiehealth.data.remote.response.DetailVegetableResponse
 import com.example.veggiehealth.data.remote.response.LoginResponse
+import com.example.veggiehealth.data.remote.response.ProfileResponse
 import com.example.veggiehealth.data.remote.response.RegisterResponse
 import com.example.veggiehealth.data.remote.response.VegetablesItem
 import com.example.veggiehealth.data.remote.retrofit.ApiService
@@ -59,6 +60,22 @@ class UserRepository private constructor(
             val errorResponse = Gson().fromJson(errorBody, DetailVegetableResponse::class.java)
             emit(ResultState.Error(errorResponse.message))
         }
+    }
+
+    fun getDetailUser() = liveData {
+        emit(ResultState.Loading)
+        try {
+            val detailUser = apiService.getDetailuser()
+            emit(ResultState.Success(detailUser))
+        } catch (e: HttpException) {
+            val errorBody = e.response()?.errorBody()?.string()
+            val errorResponse = Gson().fromJson(errorBody, ProfileResponse::class.java)
+            emit(ResultState.Error(errorResponse.message))
+        }
+    }
+
+    suspend fun logout() {
+        userPreference.logout()
     }
 
     companion object {
