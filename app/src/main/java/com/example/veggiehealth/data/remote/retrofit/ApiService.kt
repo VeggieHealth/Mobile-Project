@@ -3,6 +3,7 @@ package com.example.veggiehealth.data.remote.retrofit
 import com.example.veggiehealth.data.remote.response.DetailVegetableResponse
 import com.example.veggiehealth.data.remote.response.ListSayuranResponse
 import com.example.veggiehealth.data.remote.response.LoginResponse
+import com.example.veggiehealth.data.remote.response.ProfileResponse
 import com.example.veggiehealth.data.remote.response.RegisterResponse
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -37,4 +38,8 @@ interface ApiService {
     suspend fun getDetailVegetables(
         @Path("id") id : String
     ): DetailVegetableResponse
+
+    @GET("profile")
+    suspend fun getDetailuser()
+    : ProfileResponse
 }
