@@ -7,11 +7,7 @@ object Constants {
     const val TOTAL_QUESTIONS: String = "total_questions"
     const val CORRECT_ANSWERS: String = "correct_answers"
 
-    fun getFiveQuestions(): ArrayList<Question> {
-        // Gantilah ini dengan logika pemilihan 5 pertanyaan
-        val allQuestions = getQuestions()
-        return ArrayList(allQuestions.subList(0, 5))
-    }
+    private var currentQuestionIndex: Int = 0
 
     fun getQuestions(): ArrayList<Question> {
         val questionsList = ArrayList<Question>()
@@ -118,5 +114,10 @@ object Constants {
 
         return questionsList
     }
+    fun resetGame() {
+
+        currentQuestionIndex = 0
+    }
+
 
 }

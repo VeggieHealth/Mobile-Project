@@ -7,6 +7,7 @@ import android.view.View
 import com.example.veggiehealth.ui.game.Constants
 import com.example.veggiehealth.MainActivity
 import com.example.veggiehealth.databinding.ActivityResultBinding
+import com.example.veggiehealth.ui.game.GameActivity
 
 class ResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultBinding
@@ -24,7 +25,20 @@ class ResultActivity : AppCompatActivity() {
         binding.tvScore.text = "Your Score is $correctAnswers out of $totalQuestions."
 
         binding.buttonFinish.setOnClickListener {
-            startActivity(Intent(this@ResultActivity, MainActivity::class.java))
+            val intent = Intent(this@ResultActivity, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+            finish()
+        }
+
+        binding.buttonReset.setOnClickListener {
+
+            Constants.resetGame()
+
+
+            val intent = Intent(this@ResultActivity, GameActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
             finish()
         }
     }
