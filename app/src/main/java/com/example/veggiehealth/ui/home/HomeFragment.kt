@@ -1,15 +1,14 @@
 package com.example.veggiehealth.ui.home
 
-
+import android.content.Intent
+import android.graphics.Camera
 import android.content.Intent
 import android.os.Bundle
-
 import android.app.ListActivity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,7 +16,8 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.veggiehealth.R
 import com.example.veggiehealth.databinding.FragmentHomeBinding
-
+import com.example.veggiehealth.ui.camera.CameraActivity
+import com.example.veggiehealth.ui.list.VeggieListActivity
 import com.example.veggiehealth.ui.game.GameActivity
 import com.google.android.material.card.MaterialCardView
 
@@ -44,7 +44,10 @@ class HomeFragment : Fragment(), View.OnClickListener {
         // Menggunakan aktivitas yang mengandung fragment
         val parentActivity = activity
 
-
+        binding.cvScan.setOnClickListener {
+            val intent = Intent(parentActivity, CameraActivity::class.java)
+            startActivity(intent)
+        }
         binding.btnListHome.setOnClickListener {
             // Membuat intent dan memulai aktivitas dari aktivitas yang mengandung fragment
             val intent = Intent(parentActivity, VeggieListActivity::class.java)

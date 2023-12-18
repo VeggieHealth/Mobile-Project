@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.veggiehealth.data.UserRepository
 import com.example.veggiehealth.di.Injection
+import com.example.veggiehealth.ui.camera.PredictViewModel
 import com.example.veggiehealth.ui.detail.DetailViewModel
 import com.example.veggiehealth.ui.list.ListViewModel
 import com.example.veggiehealth.ui.login.LoginViewModel
@@ -32,6 +33,9 @@ class ViewModelFactory(private val repository: UserRepository) : ViewModelProvid
             }
             modelClass.isAssignableFrom(ProfileViewModel::class.java) -> {
                 ProfileViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(PredictViewModel::class.java) -> {
+                PredictViewModel(repository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }

@@ -59,29 +59,9 @@
         android:layout_marginTop="32dp"
         android:src="@drawable/person_icon"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_camera_profile" />
-
-    <ImageButton
-        android:id="@+id/btn_camera_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:backgroundTintMode="add"
-        android:src="@drawable/camerabtn"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
 
-    <ImageButton
-        android:id="@+id/btn_galery_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTintMode="add"
-        android:src="@drawable/galerybtn"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
+
 
     <ImageView
         android:id="@+id/icon_email"
@@ -121,7 +101,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/icon_email"
-        app:layout_constraintTop_toBottomOf="@+id/btn_camera_profile" />
+        app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
 
     <Button
         android:id="@+id/btn_logout_profile"
