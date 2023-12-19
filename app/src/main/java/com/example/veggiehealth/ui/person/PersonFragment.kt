@@ -42,6 +42,7 @@ class PersonFragment : Fragment() {
                 try {
                     userLogout()
                     val logoutIntent = Intent(requireContext(), LoginActivity::class.java)
+                    logoutIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                     startActivity(logoutIntent)
                 } catch (e: Exception) {
                     showToast("Logout failed: ${e.message}")
