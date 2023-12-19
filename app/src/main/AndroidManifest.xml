@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VeggieHealth"
         tools:targetApi="31">
-      <activity
+
+        <activity
             android:name=".ui.camera.CameraActivity"
             android:exported="false" />
         <activity
@@ -37,11 +38,14 @@
             android:exported="false" />
         <activity
             android:name=".ui.splashscreen.SplashActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.onboarding.OnBoardingActivity"
             android:exported="false">
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -51,6 +55,7 @@
         <activity
             android:name=".ui.detail.DetailActivity"
             android:exported="false" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
@@ -58,7 +63,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"/>
+                android:resource="@xml/file_paths" />
         </provider>
 
         <service

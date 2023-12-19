@@ -49,6 +49,14 @@
     <string name="wrong">Mohon Maaf, Jawaban Anda Salah</string>
 
     <string name="retry">Coba Lagi</string>
+    <string name="textscan1">Scan your type of vegetables</string>
+    <string name="textscan2">hello friends, dont hesitate to get to know the types and benefits of vegetables that we dont know more about</string>
 
-
+    <string name="screentitle1">Come on, Get to Know Veggie Health</string>
+    <string name="screentitle2">Is my image guess correct?</string>
+    <string name="screentitle3">Scan a picture of your vegetables</string>
+    <string name="screenteks1">With the Veggie Health application, we know the types and benefits of vegetables for our bodys health</string>
+    <string name="screenteks2">With the picture guessing quiz, we can improve our knowledge and language skills and develop cognitive skills</string>
+    <string name="screenteks3">in this application, we can detect a vegetable that we know</string>
+    <string name="getstarted">Get Started</string>
 </resources>
