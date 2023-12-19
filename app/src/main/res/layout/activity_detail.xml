@@ -109,7 +109,7 @@
                 android:fontFamily="@font/poppins_bold"
                 android:gravity="center_vertical"
                 android:text="@string/kcal"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/guideline12"
                 app:layout_constraintStart_toEndOf="@+id/iv_kcal"
                 app:layout_constraintTop_toBottomOf="@+id/tv_informations" />
@@ -148,7 +148,7 @@
                 android:fontFamily="@font/poppins_bold"
                 android:gravity="center_vertical"
                 android:text="@string/protenis"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/guideline12"
                 app:layout_constraintStart_toEndOf="@+id/circleImageView3"
                 app:layout_constraintTop_toBottomOf="@+id/tv_informations" />
@@ -173,7 +173,7 @@
                 android:fontFamily="@font/poppins_bold"
                 android:gravity="center_vertical"
                 android:text="@string/vitamin"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/circleImageView4"
                 app:layout_constraintTop_toTopOf="@+id/guideline12" />
@@ -188,7 +188,7 @@
                 android:fontFamily="@font/poppins_bold"
                 android:gravity="center_vertical"
                 android:text="@string/carbs"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/circleImageView2"
                 app:layout_constraintTop_toTopOf="@+id/guideline12" />
@@ -199,7 +199,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_begin="197dp" />
+                app:layout_constraintGuide_begin="177dp" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline12"
