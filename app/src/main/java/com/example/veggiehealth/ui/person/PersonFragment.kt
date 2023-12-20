@@ -1,18 +1,16 @@
 package com.example.veggiehealth.ui.person
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import com.example.veggiehealth.MainActivity
-import com.example.veggiehealth.R
 import com.example.veggiehealth.ViewModelFactory
 import com.example.veggiehealth.data.remote.response.UserProfile
 import com.example.veggiehealth.databinding.FragmentPersonBinding
@@ -38,16 +36,7 @@ class PersonFragment : Fragment() {
         _binding = FragmentPersonBinding.inflate(inflater, container, false)
 
         binding.btnLogoutProfile.setOnClickListener {
-            lifecycleScope.launch {
-                try {
-                    userLogout()
-                    val logoutIntent = Intent(requireContext(), LoginActivity::class.java)
-                    logoutIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                    startActivity(logoutIntent)
-                } catch (e: Exception) {
-                    showToast("Logout failed: ${e.message}")
-                }
-            }
+            showLogoutConfirmationDialog()
         }
         viewModel.getDetailProfile().observe(viewLifecycleOwner) { profileResult->
             when(profileResult) {
@@ -67,6 +56,41 @@ class PersonFragment : Fragment() {
         }
         return binding.root
     }
+
+    private fun showLogoutConfirmationDialog() {
+        val alertDialogBuilder = AlertDialog.Builder(requireContext())
+        alertDialogBuilder.setTitle("Konfirmasi Logout")
+        alertDialogBuilder.setMessage("Apakah Anda yakin ingin logout?")
+
+        alertDialogBuilder.setPositiveButton("Ya") { dialogInterface: DialogInterface, _: Int ->
+            // Tombol "Ya" ditekan, lakukan logout
+            dialogInterface.dismiss()
+            performLogout()
+        }
+
+        alertDialogBuilder.setNegativeButton("Tidak") { dialogInterface: DialogInterface, _: Int ->
+            // Tombol "Tidak" ditekan, tutup dialog
+            dialogInterface.dismiss()
+        }
+
+        val alertDialog = alertDialogBuilder.create()
+        alertDialog.show()
+    }
+
+    private fun performLogout() {
+        lifecycleScope.launch {
+            try {
+                userLogout()
+                val logoutIntent = Intent(requireContext(), LoginActivity::class.java)
+                logoutIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                startActivity(logoutIntent)
+            } catch (e: Exception) {
+                showToast("Logout failed: ${e.message}")
+            }
+        }
+    }
+
+
     private suspend fun userLogout() {
         viewModel.logOut()
     }
