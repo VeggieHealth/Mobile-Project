@@ -1,14 +1,18 @@
 package com.example.veggiehealth.ui.game
 
+import android.app.Dialog
 import android.content.Intent
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import com.example.veggiehealth.R
 import com.example.veggiehealth.databinding.ActivityGameBinding
 import com.example.veggiehealth.ui.result.ResultActivity
+
 
 class GameActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -38,7 +42,43 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
             R.id.tv_option_two -> handleOptionClick(binding.tvOptionTwo, 2)
             R.id.tv_option_three -> handleOptionClick(binding.tvOptionThree, 3)
             R.id.tv_option_four -> handleOptionClick(binding.tvOptionFour, 4)
+            R.id.btnDismiss -> handleDismissButtonClick()
         }
+    }
+
+    private fun handleDismissButtonClick() {
+        if (mCurrentPosition < mQuestionsList?.size ?: 0) {
+            setQuestion()
+        } else {
+            showResult()
+        }
+    }
+
+    private fun showCustomDialog(isCorrect: Boolean) {
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.popup_game_layout)
+        dialog.setCanceledOnTouchOutside(false)
+
+        val imgPopup: ImageView = dialog.findViewById(R.id.imgPopup)
+        val messageTextView: TextView = dialog.findViewById(R.id.tvPopupMessage)
+        val dismissButton: Button = dialog.findViewById(R.id.btnDismiss)
+
+        if (isCorrect) {
+            imgPopup.setImageResource(R.drawable.benar)
+            messageTextView.text = "Your Answer is Correct!"
+            messageTextView.setTextColor(resources.getColor(R.color.green_7))
+        } else {
+            imgPopup.setImageResource(R.drawable.salah)
+            messageTextView.text = "Your Answer is Wrong!"
+            messageTextView.setTextColor(resources.getColor(R.color.red))
+        }
+
+        dismissButton.setOnClickListener {
+            dialog.dismiss()
+            handleDismissButtonClick()
+        }
+
+        dialog.show()
     }
 
     private fun handleOptionClick(tv: TextView, selectedOptionNum: Int) {
@@ -46,17 +86,18 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
             val question = mQuestionsList?.get(mCurrentPosition)
             if (question?.correctAnswer == selectedOptionNum) {
                 mCorrectAnswers++
+                showCustomDialog(true)
+            }
+            else {
+                showCustomDialog(false)
             }
             answerView(question?.correctAnswer ?: 0)
 
             mCurrentPosition++
-            if (mCurrentPosition < mQuestionsList?.size ?: 0) {
-                setQuestion()
-            } else {
-                showResult()
-            }
+
         }
     }
+
 
     private fun answerView(answer: Int) {
         val selectedOptionView: TextView = when (answer) {
@@ -72,7 +113,7 @@ class GameActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun setQuestion() {
         mQuestionsList?.shuffle()
-        mQuestionsList = mQuestionsList?.take(5) as ArrayList<Question>
+        mQuestionsList = mQuestionsList?.take(10) as ArrayList<Question>
         val question = mQuestionsList?.get(mCurrentPosition)
         defaultOptionsView()
 
