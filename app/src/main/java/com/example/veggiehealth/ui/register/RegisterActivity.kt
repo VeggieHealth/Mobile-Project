@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
@@ -49,19 +50,10 @@ class RegisterActivity : AppCompatActivity() {
                         }
                         is ResultState.Success -> {
                             showLoading(false)
-                            AlertDialog.Builder(this).apply {
-                                setTitle("Register Status")
-                                setMessage(response.data.message)
-                                setPositiveButton("Lanjut") {dialog,_ -> dialog.dismiss()
-                                    finish()
-                                    val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
-                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-                                    startActivity(intent)
-
-                                }
-                                create()
-                                show()
-                            }
+                            showToast(response.data.message.toString())
+                            val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                            startActivity(intent)
                         }
                         is ResultState.Error -> {
                             showLoading(false)
@@ -84,6 +76,10 @@ class RegisterActivity : AppCompatActivity() {
         } else {
             registerBinding.progressBar.visibility = View.GONE
         }
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
 

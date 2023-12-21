@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import com.example.veggiehealth.MainActivity
@@ -52,20 +53,12 @@ class LoginActivity : AppCompatActivity() {
                         }
                         is ResultState.Success -> {
                             showLoading(false)
+                            showToast(response.data.message.toString())
                             val token = response.data.token
-                            AlertDialog.Builder(this).apply {
-                                setTitle("Login Status")
-                                setMessage(response.data.message)
-                                setPositiveButton("Lanjut") { _, _ ->
-                                    viewModel.saveSession(UserModel(email, token.toString()))
-                                    val intent = Intent(this.context, MainActivity::class.java)
-                                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                                    startActivity(intent)
-                                    finish()
-                                }
-                                create()
-                                show()
-                            }
+                            viewModel.saveSession(UserModel(email, token.toString()))
+                            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                            startActivity(intent)
                         }
                         is ResultState.Error -> {
                             showLoading(false)
@@ -88,5 +81,8 @@ class LoginActivity : AppCompatActivity() {
         } else {
             binding.progressBar.visibility = View.GONE
         }
+    }
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
