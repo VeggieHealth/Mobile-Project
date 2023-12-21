@@ -102,18 +102,10 @@ class CameraActivity : AppCompatActivity() {
                     }
                     is ResultState.Success -> {
                         showLoading(false)
-                        AlertDialog.Builder(this).apply {
-                            setTitle("Predict Status")
-                            setMessage(predict.data.message)
-                            setPositiveButton("Ke Detail Buah") { _, _ ->
-                                val intent = Intent(this.context, DetailActivity::class.java)
-                                intent.putExtra(DetailActivity.EXTRA_DETAIL, predict.data.vegetableId.toString())
-                                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                                startActivity(intent)
-                            }
-                            create()
-                            show()
-                        }
+                        val intent = Intent(this@CameraActivity, DetailActivity::class.java)
+                        intent.putExtra(DetailActivity.EXTRA_DETAIL, predict.data.vegetableId.toString())
+                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                        startActivity(intent)
                     }
                     is ResultState.Error -> {
                         showLoading(false)

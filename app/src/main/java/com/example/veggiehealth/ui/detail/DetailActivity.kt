@@ -1,16 +1,16 @@
 package com.example.veggiehealth.ui.detail
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.bumptech.glide.Glide
-import com.example.veggiehealth.R
+import com.example.veggiehealth.MainActivity
 import com.example.veggiehealth.ViewModelFactory
 import com.example.veggiehealth.data.remote.response.Vegetable
 import com.example.veggiehealth.databinding.ActivityDetailBinding
@@ -29,6 +29,12 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val extraDetail = intent.getStringExtra(EXTRA_DETAIL) as String
+
+        binding.btnBack.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
+        }
 
         viewModel.detailVegetables(extraDetail).observe(this) { vegResult ->
             when (vegResult) {
