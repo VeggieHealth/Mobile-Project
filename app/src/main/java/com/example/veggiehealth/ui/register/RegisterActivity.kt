@@ -48,6 +48,10 @@ class RegisterActivity : AppCompatActivity() {
                                 setMessage(response.data.message)
                                 setPositiveButton("Lanjut") {dialog,_ -> dialog.dismiss()
                                     finish()
+                                    val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                                    startActivity(intent)
+
                                 }
                                 create()
                                 show()
