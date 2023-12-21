@@ -7,7 +7,6 @@ import androidx.activity.viewModels
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.veggiehealth.databinding.ActivityMainBinding
-import com.example.veggiehealth.ui.login.LoginActivity
 import com.example.veggiehealth.ui.splashscreen.SplashActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
