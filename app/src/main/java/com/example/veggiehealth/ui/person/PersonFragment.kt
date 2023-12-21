@@ -59,21 +59,22 @@ class PersonFragment : Fragment() {
 
     private fun showLogoutConfirmationDialog() {
         val alertDialogBuilder = AlertDialog.Builder(requireContext())
-        alertDialogBuilder.setTitle("Konfirmasi Logout")
-        alertDialogBuilder.setMessage("Apakah Anda yakin ingin logout?")
+        alertDialogBuilder.setTitle("Confirm Logout")
+        alertDialogBuilder.setMessage("Are you sure you want to logout?")
 
-        alertDialogBuilder.setPositiveButton("Ya") { dialogInterface: DialogInterface, _: Int ->
+        alertDialogBuilder.setPositiveButton("Yes") { dialogInterface: DialogInterface, _: Int ->
             // Tombol "Ya" ditekan, lakukan logout
             dialogInterface.dismiss()
             performLogout()
         }
 
-        alertDialogBuilder.setNegativeButton("Tidak") { dialogInterface: DialogInterface, _: Int ->
+        alertDialogBuilder.setNegativeButton("No") { dialogInterface: DialogInterface, _: Int ->
             // Tombol "Tidak" ditekan, tutup dialog
             dialogInterface.dismiss()
         }
 
         val alertDialog = alertDialogBuilder.create()
+        alertDialog.setCancelable(false)
         alertDialog.show()
     }
 

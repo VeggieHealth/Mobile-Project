@@ -15,6 +15,7 @@ import com.example.veggiehealth.ViewModelFactory
 import com.example.veggiehealth.data.remote.response.Vegetable
 import com.example.veggiehealth.databinding.ActivityDetailBinding
 import com.example.veggiehealth.di.ResultState
+import com.example.veggiehealth.ui.list.VeggieListActivity
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
@@ -31,7 +32,7 @@ class DetailActivity : AppCompatActivity() {
         val extraDetail = intent.getStringExtra(EXTRA_DETAIL) as String
 
         binding.btnBack.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, VeggieListActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(intent)
         }
