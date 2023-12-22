@@ -27,7 +27,7 @@ class ResultActivity : AppCompatActivity() {
         binding.tvScore.text = "Your Score is $correctAnswers out of $totalQuestions."
         when (correctAnswers) {
             in 2..5 -> {
-                binding.tvCongratulations.text = "WKWKWK, You Nob!!"
+                binding.tvCongratulations.text = "Don't worry, let's try again!!"
                 binding.ivTrophy.setImageResource(R.drawable.emotquiz1)
             }
             in 6..8 -> {
@@ -39,8 +39,8 @@ class ResultActivity : AppCompatActivity() {
                 binding.ivTrophy.setImageResource(R.drawable.emotquiz3)
             }
             else -> {
-                binding.tvCongratulations.text = "You Very Stupid"
-                binding.ivTrophy.setImageResource(R.drawable.emotquizz4)
+                binding.tvCongratulations.text = "It's okay, you can do it"
+                binding.ivTrophy.setImageResource(R.drawable.emotquiz4)
             }
         }
         Log.d("ResultActivity", "correctAnswers: $correctAnswers")
